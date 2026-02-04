@@ -32,14 +32,11 @@ jobs:
     steps:
       - name: comment with API
         run: |
-          gh api -X POST \
-            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+          gh api -X POST ${COMMENT_URL} \
             -f body='
             Comment but from an API Call.
             '
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORGANIZATION: ${{ github.event.organization.login }}
-          REPOSITORY: ${{ github.event.repository.name }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          COMMENT_URL: ${{ github.event.issues.comment_url }}
 
