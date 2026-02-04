@@ -27,6 +27,8 @@ jobs:
 
   comment-with-api:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: comment with API
         run: |
