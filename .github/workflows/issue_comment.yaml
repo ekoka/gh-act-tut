@@ -32,11 +32,11 @@ jobs:
     steps:
       - name: comment with API
         run: |
-          gh api -X POST ${COMMENT_URL} \
+          gh api -X POST ${COMMENTS_URL} \
             -f body='
             Comment but from an API Call.
             '
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_URL: ${{ github.event.issue.comment_url }}
+          COMMENTS_URL: ${{ github.event.issue.comments_url }}
 
