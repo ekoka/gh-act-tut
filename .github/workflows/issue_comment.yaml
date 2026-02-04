@@ -38,5 +38,5 @@ jobs:
             '
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_URL: ${{ github.event.issues.comment_url }}
+          COMMENT_URL: ${{ github.event.issue.comment_url }}
 
